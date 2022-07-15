@@ -1,0 +1,11 @@
+<mat-nav-list
+  id="nav-list_anchors"
+  >
+  <a
+    mat-list-item
+    routerLink="{{link}}"
+    *ngFor="let link of paramOfLinks"
+  >
+    {{ link | uppercase }}
+  </a>
+</mat-nav-list>

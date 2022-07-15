@@ -1,0 +1,10 @@
+TODO People
+
+PEOPLE:
+  ✔ Botão de adicionar @done(22-07-13 10:30)
+
+  ✔ Request para o endpoint list: @done(22-07-14 16:53)
+  // http://localhost:3000/people
+  ✔ Popular a tabela: @done(22-07-14 16:53)
+    ✔ Botão para editar @done(22-07-14 16:53)
+    ✔ Botão para excluir @done(22-07-14 16:53)

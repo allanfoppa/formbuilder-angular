@@ -1,0 +1,58 @@
+<section
+  id="add-person__container"
+>
+  <mat-card
+    id="add-person__card-container"
+  >
+    <form
+      class="add-person-form"
+      [formGroup]="formFields"
+      (ngSubmit)="onSubmit()"
+    >
+      <h3>INFORMAÇÃO DA PESSOA:</h3>
+        <div
+          class="add-person__inputs-container"
+        >
+          <mat-form-field class="add-person-full-width" appearance="fill">
+            <mat-label>Nome</mat-label>
+            <input matInput formControlName="firstName">
+          </mat-form-field>
+          <mat-form-field class="add-person-full-width" appearance="fill">
+            <mat-label>Sobrenome</mat-label>
+            <input matInput formControlName="lastName">
+          </mat-form-field>
+        </div>
+
+      <h3>INFORMAÇÃO DE ENDEREÇO:</h3>
+      <div
+        formGroupName="address"
+      >
+        <mat-form-field class="add-person-full-width" appearance="fill">
+          <mat-label>Rua</mat-label>
+          <input matInput placeholder="Ex. 100 Main St" formControlName="street" />
+        </mat-form-field>
+
+        <div
+          class="add-person__inputs-container"
+        >
+          <mat-form-field class="add-person-full-width" appearance="fill">
+            <mat-label>UF</mat-label>
+            <input matInput placeholder="Ex. California" formControlName="state">
+          </mat-form-field>
+          <mat-form-field class="add-person-full-width" appearance="fill">
+            <mat-label>Cidade</mat-label>
+            <input matInput placeholder="Ex. San Francisco" formControlName="city">
+          </mat-form-field>
+           <mat-form-field class="add-person-full-width" appearance="fill">
+            <mat-label>CEP</mat-label>
+            <input matInput #postalCode maxlength="9" placeholder="Ex. 00000-00" formControlName="zip">
+            <mat-hint align="end">{{postalCode.value.length}} / 9</mat-hint>
+          </mat-form-field>
+        </div>
+
+      </div>
+
+      <button mat-raised-button color="primary" [disabled]="!formFields.valid">Save</button>
+    </form>
+  </mat-card>
+</section>

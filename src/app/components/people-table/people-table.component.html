@@ -1,0 +1,51 @@
+<table
+  id="people-table"
+  mat-table
+  [dataSource]="paramOfpeopleList"
+  class="mat-elevation-z8"
+>
+  <ng-container matColumnDef="firstName">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{ element.firstName }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="lastName">
+    <th mat-header-cell *matHeaderCellDef> Sobrenome </th>
+    <td mat-cell *matCellDef="let element"> {{ element.lastName }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="state">
+    <th mat-header-cell *matHeaderCellDef> Estado </th>
+    <td mat-cell *matCellDef="let element"> {{ element.address.state }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="city">
+    <th mat-header-cell *matHeaderCellDef> Cidade </th>
+    <td mat-cell *matCellDef="let element"> {{ element.address.city }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="street">
+    <th mat-header-cell *matHeaderCellDef> Rua </th>
+    <td mat-cell *matCellDef="let element"> {{ element.address.street }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="zip">
+    <th mat-header-cell *matHeaderCellDef> CEP </th>
+    <td mat-cell *matCellDef="let element"> {{ element.address.zip }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> Ações </th>
+    <td mat-cell *matCellDef="let element">
+      <div
+        class="people-table-button-container"
+      >
+        <button mat-raised-button color="accent" (click)="sendToEditUser(element.id)">Editar</button>
+        <button mat-raised-button color="warn" (click)="sendToDeleteUser(element.id)">Excluir</button>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="paramOfcolumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: paramOfcolumns;"></tr>
+</table>
